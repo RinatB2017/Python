@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import * # компоненты интерфейса
 from PyQt5.QtCore import *
 
 def btnClicked(self):
-    QMessageBox.information(self, "Info",  "OK",  QMessageBox.Ok)
+    QMessageBox.information(self, "Info", "OK")
 
 def main():
     # Каждое приложение должно создать объект QApplication
@@ -24,9 +24,9 @@ def main():
     btn = QPushButton()
     btn.setText("OK")
 
+    # btn.clicked.connect(btnClicked)
+    # connect(btn, SIGNAL("Clicked()"), btnClicked)
     btn.clicked.connect(btnClicked)
-    #connect(btn, SIGNAL("Clicked()"), btnClicked)
-    #btn.clicked.connect(self.btnClicked)
 
     vbox.addWidget(label)
     vbox.addWidget(btn)

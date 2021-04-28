@@ -1,0 +1,7 @@
+// https://coderoad.ru/9330055/аргумент-1-имеет-неожиданный-тип-Ui_mainWindow
+Чтобы работало
+    QMessageBox.information(self, "Info",  "Тест",  QMessageBox.Ok)
+надо в файле с MainWindow поменять
+    class Ui_MainWindow(object):
+на
+    class Ui_MainWindow(QWidget):

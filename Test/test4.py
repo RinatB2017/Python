@@ -14,19 +14,20 @@ class mywindow(QtWidgets.QMainWindow):
  
     def btnClicked(self):
         self.ui.label.setText("Вы нажали на кнопку!")
-        # Если не использовать, то часть текста исчезнет.
-        self.ui.label.adjustSize()
         QMessageBox.information(self, "Info",  "OK",  QMessageBox.Ok)
         
-        
         self.ui.label.setFont(
-            QtGui.QFont('SansSerif', 30)
+            QtGui.QFont('SansSerif', 20)
         ) # Изменение шрифта и размера
 
-        self.ui.label.setGeometry(
-            QtCore.QRect(10, 10, 250, 200)
-        ) # изменить геометрию ярлыка
- 
+        # self.ui.label.setGeometry(
+        #     # изменить геометрию ярлыка
+        #     QtCore.QRect(10, 10, 350, 200)
+        # )
+
+        # Если не использовать, то часть текста исчезнет.
+        self.ui.label.adjustSize()
+
 app = QtWidgets.QApplication([])
 application = mywindow()
 application.show()
