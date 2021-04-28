@@ -33,7 +33,8 @@ class Ui_MainWindow(QWidget):
         self.retranslateUi(MainWindow)
         # self.pushButton.clicked.connect(MainWindow.close)
         # self.pushButton.clicked.connect(self.test)
-        self.pushButton.clicked.connect(self.xxx)
+        # self.pushButton.clicked.connect(self.xxx)
+        self.pushButton.clicked.connect(self.test_box)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def test(self):
@@ -41,6 +42,20 @@ class Ui_MainWindow(QWidget):
 
     def xxx(self):
         print("XXX")
+
+    def test_box(self):
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setText("This is a message box")
+        msg.setInformativeText("This is additional information")
+        msg.setWindowTitle("MessageBox demo")
+        msg.setDetailedText("The details are as follows:")
+        msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+        retval = msg.exec_()
+        if retval == QMessageBox.Ok:
+            print("OK")
+        else:
+            print("CANCEL")
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
