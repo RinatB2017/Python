@@ -9,10 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMessageBox, QWidget
 
 
-class Ui_MainWindow(QWidget):
+class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
@@ -20,45 +19,30 @@ class Ui_MainWindow(QWidget):
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setObjectName("label")
-        self.verticalLayout.addWidget(self.label)
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setObjectName("pushButton")
-        self.verticalLayout.addWidget(self.pushButton)
-        spacerItem = QtWidgets.QSpacerItem(20, 527, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout.addItem(spacerItem)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.btn_test = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_test.setObjectName("btn_test")
+        self.horizontalLayout.addWidget(self.btn_test)
+        self.lbl_test = QtWidgets.QLabel(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lbl_test.sizePolicy().hasHeightForWidth())
+        self.lbl_test.setSizePolicy(sizePolicy)
+        self.lbl_test.setObjectName("lbl_test")
+        self.horizontalLayout.addWidget(self.lbl_test)
+        self.verticalLayout.addLayout(self.horizontalLayout)
+        self.te_log = QtWidgets.QTextEdit(self.centralwidget)
+        self.te_log.setObjectName("te_log")
+        self.verticalLayout.addWidget(self.te_log)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        # self.pushButton.clicked.connect(MainWindow.close)
-        # self.pushButton.clicked.connect(self.test)
-        # self.pushButton.clicked.connect(self.xxx)
-        self.pushButton.clicked.connect(self.test_box)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
-    def test(self):
-        QMessageBox.information(self, "Info",  "Тест",  QMessageBox.Ok)
-
-    def xxx(self):
-        print("XXX")
-
-    def test_box(self):
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setText("This is a message box")
-        msg.setInformativeText("This is additional information")
-        msg.setWindowTitle("MessageBox demo")
-        msg.setDetailedText("The details are as follows:")
-        msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-        retval = msg.exec_()
-        if retval == QMessageBox.Ok:
-            print("OK")
-        else:
-            print("CANCEL")
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "TextLabel"))
-        self.pushButton.setText(_translate("MainWindow", "PushButton"))
+        self.btn_test.setText(_translate("MainWindow", "Test"))
+        self.lbl_test.setText(_translate("MainWindow", "---"))
