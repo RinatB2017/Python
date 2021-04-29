@@ -58,7 +58,7 @@ if __name__ == "__main__":
     with open("city.csv", "r") as f:
         for i in f:
             split = i.split(",")
-            print '{} - {}'.format(split[2].translate(None, '"\n\r'), split[1].translate(None, '"\n'))
+            print ('{} - {}'.format(split[2].translate(None, '"\n\r'), split[1].translate(None, '"\n')))
 
             x = requests.get("http://wifimap.io//user/purchased_cities/"
                              "{}?srv_id={}&sub_srv_id={}&timestamp={}&session_token={}".format(
