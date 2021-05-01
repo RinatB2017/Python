@@ -1,0 +1,9 @@
+https://datatofish.com/executable-pyinstaller/
+
+Изготовление и запуск программы
+1) устанавливаем pyinstaller
+pip install pyinstaller
+2) собираем исполняемый файл
+/home/user/.local/bin/pyinstaller --onefile test.py
+3) запуск
+./dist/test
