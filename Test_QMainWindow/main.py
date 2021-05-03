@@ -9,9 +9,10 @@
 # https://tproger.ru/translations/python-gui-pyqt/
 
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QMessageBox, QWidget
+from PyQt5.QtWidgets import QMessageBox, QWidget, QDialog
 
 from mainwindow.mainwindow import Ui_MainWindow
+from dialog.my_dialog import Ui_Dialog
 
 import sys
 
@@ -28,6 +29,16 @@ class ExampleApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.btn_test.clicked.connect(self.test_box)
         # self.btn_test.clicked.connect(self.test)
         # self.btn_test.clicked.connect(self.xxx)
+        self.btn_run_dialog.clicked.connect(self.run_dialog)
+
+    def run_dialog(self):
+        dialog = QDialog()
+        dialog.ui = Ui_Dialog()
+        dialog.ui.setupUi(dialog)
+        dialog.ui.sb_value.setValue(555)
+        res = dialog.exec_()
+        if res == QDialog.Accepted:
+            self.te_log.append("value: " + str(dialog.ui.sb_value.value())) #QString в PyQt не работает
 
     def test(self):
         QMessageBox.information(self, "Info",  "Тест",  QMessageBox.Ok)
