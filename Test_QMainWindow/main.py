@@ -10,9 +10,17 @@
 
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMessageBox, QWidget, QDialog
+from PyQt5 import QtGui
+from PyQt5.QtGui import QIcon
 
 from mainwindow.mainwindow import Ui_MainWindow
 from dialog.my_dialog import Ui_Dialog
+
+# import test_classes.test_classes
+
+from test_classes.class_0.class_0 import Class_0
+from test_classes.class_1.class_1 import Class_1
+
 
 import sys
 
@@ -29,6 +37,8 @@ class ExampleApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.btn_test.clicked.connect(self.test_box)
         # self.btn_test.clicked.connect(self.test)
         # self.btn_test.clicked.connect(self.xxx)
+        self.btn_0.clicked.connect(self.run_0)
+        self.btn_1.clicked.connect(self.run_1)
         self.btn_run_dialog.clicked.connect(self.run_dialog)
 
     def run_dialog(self):
@@ -43,8 +53,15 @@ class ExampleApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def test(self):
         QMessageBox.information(self, "Info",  "Тест",  QMessageBox.Ok)
 
-    def xxx(self):
-        print("XXX")
+    def run_0(self):
+        # c0 = Class_0()
+        # self.te_log.append(c0.test())
+        self.te_log.append(Class_0.test(self))
+
+    def run_1(self):
+        # c1 = Class_1()
+        # self.te_log.append(c1.test())
+        self.te_log.append(Class_1.test(self))
 
     def test_box(self):
         msg = QMessageBox()
@@ -67,6 +84,8 @@ def main():
     app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
     window = ExampleApp()                   # Создаём объект класса ExampleApp
     window.show()                           # Показываем окно
+    app.setApplicationName("Test_QMainWindow")
+    app.setWindowIcon(QIcon("computer.ico"));
     app.exec_()                             # и запускаем приложение
 
 if __name__ == '__main__':  # Если мы запускаем файл напрямую, а не импортируем

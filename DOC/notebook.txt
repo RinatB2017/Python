@@ -7,3 +7,6 @@ pip install pyinstaller
 /home/user/.local/bin/pyinstaller --onefile test.py
 3) запуск
 ./dist/test
+
+pycharm cannot run program
+Для устранения ошибки достаточно удалить папку .idea и заново запустить проект
