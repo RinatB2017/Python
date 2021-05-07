@@ -21,7 +21,7 @@ def read_file():
 
 if __name__ == "__main__":
     print("OK")
-    test = Test();
+    test = Test()
     test.test()
 
     class_b = B();
