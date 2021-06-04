@@ -10,7 +10,7 @@ plt.scatter(1.0, 1.0)   # scatter - метод для нанесения мар�
 print (fig.axes)
 
 # смотри преамбулу
-# save(name='pic_1_4_1', fmt='pdf')
-# save(name='pic_1_4_1', fmt='png')
+plt.savefig('pic_1_4_1.pdf')
+plt.savefig('pic_1_4_1.png')
 
 plt.show()

@@ -34,7 +34,7 @@ plt.text(2.8, 4.8,'6. Grid lines', fontsize=14)
 plt.grid(True)
 
 # смотри преамбулу
-#save('pic_1_5_2', fmt='pdf')
-#save('pic_1_5_2', fmt='png')
+plt.savefig('pic_1_5_2.pdf')
+plt.savefig('pic_1_5_2.png')
 
 plt.show()

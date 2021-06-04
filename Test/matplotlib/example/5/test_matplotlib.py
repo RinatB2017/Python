@@ -52,8 +52,8 @@ def f_plot(*args, **kwargs):
     
     ax.grid(True)
     ax.legend()
-    # save('ex_1_6_1', fmt='pdf')
-    # save('ex_1_6_1', fmt='png')
+    plt.savefig('ex_1_6_1.pdf')
+    plt.savefig('ex_1_6_1.png')
 
 # ==================================
 # MAIN SCRIPT BODY

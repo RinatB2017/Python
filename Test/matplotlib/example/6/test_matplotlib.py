@@ -57,7 +57,7 @@ plt.title('Different alpha values')
 plt.grid(True)
 
 # смотри преамбулу
-#save('pic_1_6_2', fmt='pdf')
-#save('pic_1_6_2', fmt='png')
+plt.savefig('pic_1_6_2.pdf')
+plt.savefig('pic_1_6_2.png')
 
 plt.show()

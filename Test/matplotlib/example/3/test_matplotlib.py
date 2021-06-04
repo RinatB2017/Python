@@ -25,7 +25,7 @@ plt.text(0.15, 0.475, '7 Yticks', fontsize=12, bbox=dict(edgecolor='w', color='w
 plt.grid(True)
 
 # смотри преамбулу
-#save('pic_1_5_1', fmt='pdf')
-#save('pic_1_5_1', fmt='png')
+plt.savefig('pic_1_5_1.pdf')
+plt.savefig('pic_1_5_1.png')
 
 plt.show()
