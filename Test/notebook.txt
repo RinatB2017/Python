@@ -1,3 +1,6 @@
+https://nbviewer.jupyter.org/github/whitehorn/Scientific_graphics_in_python/blob/master/P1%20Chapter%201%20Pyplot.ipynb
+график в питоне
+
 // https://coderoad.ru/9330055/аргумент-1-имеет-неожиданный-тип-Ui_mainWindow
 Чтобы работало
     QMessageBox.information(self, "Info",  "Тест",  QMessageBox.Ok)
